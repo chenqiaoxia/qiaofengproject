@@ -1,16 +1,16 @@
 <template>
   <div class="home">
       <!--轮播图-->
-    <swiper :options="swiperOption" class="swiper-box">
-      <swiper-slide class="swiper-slide" v-for="(item,index) in carouselArr" :key="index">
-        <img :src="item"/>
-      </swiper-slide>
-      <!-- 分页器 -->
-      <div class="swiper-pagination"  slot="pagination"></div>
-      <!-- 左右箭头 -->
-      <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div>
-    </swiper>
+<!--    <swiper :options="swiperOption" class="swiper-box">-->
+<!--      <swiper-slide class="swiper-slide" v-for="(item,index) in carouselArr" :key="index">-->
+<!--        <img :src="item"/>-->
+<!--      </swiper-slide>-->
+<!--      &lt;!&ndash; 分页器 &ndash;&gt;-->
+<!--      <div class="swiper-pagination"  slot="pagination"></div>-->
+<!--      &lt;!&ndash; 左右箭头 &ndash;&gt;-->
+<!--      <div class="swiper-button-prev" slot="button-prev"></div>-->
+<!--      <div class="swiper-button-next" slot="button-next"></div>-->
+<!--    </swiper>-->
   </div>
 </template>
 
