@@ -1,51 +1,62 @@
 <template>
   <div class="home">
-      <!--轮播图-->
-<!--    <swiper :options="swiperOption" class="swiper-box">-->
-<!--      <swiper-slide class="swiper-slide" v-for="(item,index) in carouselArr" :key="index">-->
-<!--        <img :src="item"/>-->
-<!--      </swiper-slide>-->
-<!--      &lt;!&ndash; 分页器 &ndash;&gt;-->
-<!--      <div class="swiper-pagination"  slot="pagination"></div>-->
-<!--      &lt;!&ndash; 左右箭头 &ndash;&gt;-->
-<!--      <div class="swiper-button-prev" slot="button-prev"></div>-->
-<!--      <div class="swiper-button-next" slot="button-next"></div>-->
-<!--    </swiper>-->
+      <!-- 轮播图 -->
+      <div class="bannerWrap" style="width:100%;height:842px;">
+          <!-- Swiper -->
+          <div class="swiper-container">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide" style="width: 100%;">
+                      <img src="../assets/image/home/lunbo1.jpg" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                      <img src="../assets/image/home/lunbo2.jpg" alt="">
+                  </div>
+              </div>
+
+              <!-- 分页 -->
+              <div class="swiper-pagination swiper-pagination-white" id="swiper-spit"></div>
+              <!-- 左右切换 -->
+              <div class="swiper-button-next swiper-button-white"></div>
+              <div class="swiper-button-prev swiper-button-white"></div>
+
+          </div>
+      </div>
+
   </div>
 </template>
 
 <script>
+    import Swiper from 'swiper';
+    import 'swiper/dist/css/swiper.min.css'
 export default {
   name: 'Home',
     data(){
         return {
-            swiperOption:{
-                //显示分页
-                pagination: {
-                    el: '.swiper-pagination'
-                },
-                //设置点击箭头
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev'
-                },
-                //自动轮播
-                autoplay: {
-                    delay: 2000,
-                    //当用户滑动图片后继续自动轮播
-                    disableOnInteraction: false,
-                },
-                //开启循环模式
-                loop: true
-            },
-            carouselArr:['assets/image/home/lunbo1.jpg','assets/image/home/lunbo2.jpg']
         }
+    },
+    mounted() {
+      // var  mySwiper=new Swiper('.swiper-container',{})
+        var swiper = new Swiper('.swiper-container', {
+            autoplay: 5000,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+        });
     }
 }
 </script>
-<style lang="less">
-  .swiper-box{
-    width: 100%;
-    height: 288px;
-  }
+<style scoped lang="less">
+    .swiper-slide{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
 </style>
