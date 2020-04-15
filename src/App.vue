@@ -13,7 +13,7 @@
 <!--        右边-->
         <div class="main-top-bar-right">
           <div class="item">
-            <a>登录</a> /
+            <a @click="login">登录</a> /
             <a>注册</a>
           </div>
           <div class="item" @mouseover="enterBar(1)">
@@ -59,6 +59,21 @@
         </div>
     </div>
     <router-view/>
+      <div class="main-bottom">
+        <div class="upWrap">
+            <a>常见问题</a>
+            <a>意见中心</a>
+            <a>问题反馈</a>
+            <a>了解马上租</a>
+            <a>加入马上租</a>
+        </div>
+          <div class="downWrap">
+              <a>2005-2028 58.com版权所有</a>
+              <a>违法信息举报：4008135858 jubao@58ganji.com</a>
+              <a>员工舞弊举报：wb@58.com</a>
+              <a>联系我们</a>
+          </div>
+      </div>
   </div>
 </template>
 <script>
@@ -71,6 +86,9 @@
           }
       },
       methods:{
+          login(){
+              this.$router.push({path:'/login'})
+          },
           enterBar(type){
               if(type==1){
                   this.showPersonalList=true;
@@ -90,6 +108,9 @@
                   this.showHelpList=false;
               }
           }
+      },
+      mounted() {
+          console.log(this.$route.path)
       }
   }
 </script>
@@ -238,5 +259,34 @@
       padding: 0 10px;
     }
   }
+}
+.main-bottom{
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    font-size: 12px;
+    line-height: 16px;
+    .upWrap{
+        text-align: center;
+        margin-bottom: 20px;
+        a{
+            padding: 0 10px;
+            border-right: 1px solid #eee;
+            &:last-child{
+                border-right: none;
+            }
+        }
+    }
+    .downWrap{
+        color: #999;
+        a{
+            padding: 0 10px;
+            border-right: 1px solid #eee;
+            &:last-child{
+                border-right: none;
+            }
+        }
+    }
+
 }
 </style>
