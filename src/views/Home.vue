@@ -194,6 +194,8 @@ export default {
         }
     },
     mounted() {
+        console.log(222222222222)
+      console.log(this.$route.meta)
       // var  mySwiper=new Swiper('.swiper-container',{})
         var swiper = new Swiper('.swiper-container', {
             loop: true,

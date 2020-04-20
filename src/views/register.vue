@@ -4,7 +4,7 @@
         <!--登录盒子-->
         <div class="login-box">
             <div class="logo" @click="goHome"><span>马上租</span><span style="color: crimson">GO</span></div>
-            <div class="login-box-title">账户密码登录</div>
+            <div class="login-box-title">注册</div>
             <div class="account-login">
                 <div class="account-login-item">
                     <input type="text" placeholder="账户名">
@@ -13,10 +13,10 @@
                     <input type="text" placeholder="密码">
                 </div>
                 <div class="link_entries">
-                    <a>没有账号？去注册</a>
+                    <a>已有账号？去登录</a>
                 </div>
                 <div class="login-btn">
-                    登录
+                    注册
                 </div>
                 <div class="account-login-protocol">
                     <span>登录即同意 <a>《马上租使用协议》</a> </span>
@@ -28,7 +28,7 @@
 
 <script>
     export default {
-        name: "login",
+        name: "register",
         methods:{
             goHome(){
                 console.log(11111111111)
