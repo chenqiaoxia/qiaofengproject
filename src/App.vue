@@ -121,7 +121,6 @@
           }
       },
       mounted() {
-          console.log(11111111111)
           console.log(this.$route.meta)
           console.log(this.$route.path)
       }

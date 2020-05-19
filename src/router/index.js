@@ -35,6 +35,14 @@ Vue.use(VueRouter)
       },
       component: () => import('../views/register.vue')
     },
+    {
+      path: '/ChooseAddress',
+      name: 'ChooseAddress',
+      meta: {
+        keepAlive: true
+      },
+      component: () => import('../views/ChooseAddress.vue')
+    },
   {
     path: '/about',
     name: 'About',
